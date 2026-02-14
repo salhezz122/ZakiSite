@@ -1050,13 +1050,18 @@
     /* =============================
       CONFIG (عدّل هون)
     ============================== */
-    const COMPANY = {
-      name: "ZakiSite",
-      phone: "+962781234567",        // <-- غيّر الرقم
-      phoneRaw: "962781234567",      // <-- بدون + (للروابط)
-      whatsappRaw: "962781234567",   // <-- واتساب
-      waMsg: "مرحبا، بدي استفسار عن تصميم موقع/نظام ذكي."
-    };
+/* =============================
+  CONFIG
+============================= */
+
+const COMPANY = {
+  name: "ZakiSite",
+  phone: "+962781703325",
+  phoneRaw: "962781703325",
+  whatsappRaw: "962781703325",
+  waMsg: "مرحبا ZakiSite، بدي عرض سعر لموقع."
+};
+
 
     /* =============================
       Small Helpers
@@ -1266,10 +1271,13 @@
     /* =============================
       Actions (CTA / Tips / Copy)
     ============================== */
-    $("#ctaBtn").addEventListener("click", ()=>{
-      toast("تمام! احكيلنا فكرتك على الواتساب 👌");
-      setTimeout(()=> window.open($("#waBtn").href, "_blank"), 350);
-    });
+$("#ctaBtn").addEventListener("click", ()=>{
+  window.open(
+    `https://wa.me/${COMPANY.whatsappRaw}?text=${encodeURIComponent(COMPANY.waMsg)}`,
+    "_blank"
+  );
+});
+
 
     $("#miniTip").addEventListener("click", ()=>{
       const tips = [
