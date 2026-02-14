@@ -1156,7 +1156,7 @@ const COMPANY = {
       window.scrollTo({ top, behavior:"smooth" });
     }
 
-    $$('a[href^="#"]').forEach(a=>{
+   $$('a[href^="#"]:not(#waBtn):not(#callBtn):not(#fabWa)').forEach(a=>{
       a.addEventListener("click",(e)=>{
         const href = a.getAttribute("href");
         if(!href || href === "#") return;
